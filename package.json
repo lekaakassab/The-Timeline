@@ -13,7 +13,8 @@
   "dependencies": {
     "ejs": "^4.0.1",
     "express": "^5.2.1",
-    "jes": "^0.6.1"
+    "jes": "^0.6.1",
+    "mongoose": "^9.2.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

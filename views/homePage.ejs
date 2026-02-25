@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+  <title>Timeline</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
 <h1>Timeline</h1>
 
-<% posts.forEach(function(post){ %>
-  <h3><%= post.name %></h3>
-  <p><%= post.createdAt %></p>
-  <p><%= post.message %></p>
+<form method="POST" action="/posts">
+  <textarea name="post" rows="4" cols="40" placeholder="Write your post..."></textarea>
+  <br>
+  <button type="submit">Add Post</button>
+</form>
+
+<hr>
+
+<% posts.forEach(function(p){ %>
+
+  <p><strong>Date:</strong> <%= new Date(p.createdAt).toDateString() %></p>
+
+  <p><%= p.post %></p>
+
+  <form method="POST" action="/posts/<%= p._id %>/update">
+    <textarea name="post" rows="3" cols="40"><%= p.post %></textarea>
+    <br>
+    <button type="submit">Update</button>
+  </form>
+
+  <form method="POST" action="/posts/<%= p._id %>/delete">
+    <button type="submit">Delete</button>
+  </form>
+
   <hr>
+
 <% }); %>
 
 </body>
