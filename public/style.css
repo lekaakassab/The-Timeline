@@ -1,6 +1,6 @@
 body{
   font-family: Arial, sans-serif;
-  background: #5dc795;
+  background: #9f86e8;
   margin: 0;
   padding: 20px;
 }
@@ -25,7 +25,7 @@ button{
   cursor: pointer;
   font-weight: bold;
   margin-top: 6px;
-  color: #90d6ab;
+  color: #d7b9f3;
 }
 
 button:hover{
@@ -38,6 +38,6 @@ form{
 
 hr{
   border: 0;
-  border-top: 1px solid #c72323;
+  border-top: 1px solid #080505;
   margin: 20px 0;
 }

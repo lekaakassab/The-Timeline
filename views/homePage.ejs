@@ -33,6 +33,28 @@
   </form>
 
   <hr>
+  <div class="comments-form">
+    <form method="post" action="/post/add/new-comment/<%= p._id %>">
+      <input type="text" placeholder="comment......." autocomplete="off" name="body">
+      <input type="hidden" value="">
+      <button>Add comment</button>
+    </form>
+  </div>
+
+  <div class="comments-container">
+    <% if (p.comments.length > 0) { %>
+      <% p.comments.forEach(function(c){ %>
+        <div class="comment-section">
+          <h4><%= c.body %></h4>
+
+          <form method="POST" action="/comments/<%= c._id %>/delete">
+            <button type="submit">Delete</button>
+          </form>
+
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
 
 <% }); %>
 

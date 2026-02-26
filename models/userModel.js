@@ -6,7 +6,12 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: [25, "Post should be minimum 25 characters"]
-    }
+    },
+
+    comments: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment"
+    }]
   },
   { timestamps: true }
 );
