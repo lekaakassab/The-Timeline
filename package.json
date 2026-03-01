@@ -11,6 +11,7 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
+    "dotenv": "^17.3.1",
     "ejs": "^4.0.1",
     "express": "^5.2.1",
     "jes": "^0.6.1",

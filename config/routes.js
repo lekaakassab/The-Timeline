@@ -1,14 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-const { 
-  homePage, 
-  addPost, 
-  deletePost, 
-  updatePost, 
+const {
+  homePage,
+  addPost,
+  deletePost,
+  updatePost,
   addComment,
   deleteComment
 } = require("../controller/userController");
+
+const apiRoutes = require("./apiRoutes");
+
+router.use(apiRoutes);
 
 router.get("/", homePage);
 router.post("/posts", addPost);

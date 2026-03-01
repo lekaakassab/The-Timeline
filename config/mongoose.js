@@ -1,12 +1,6 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect("mongodb+srv://lolo:<db_password>@time-line-project.ampjlle.mongodb.net/")
-.then( ()=> {
-    console.log("DB is working")
-}
-)
-.catch( err => {
-
-    console.log(err);
-
-})
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("DB is working"))
+.catch(err => console.log(err));
